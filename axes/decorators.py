@@ -174,6 +174,7 @@ def _get_user_attempts(request):
             params['username'] = username
 
         attempts = AccessAttempt.objects.filter(**params)
+        log.info('With IP only, there are {} attempts'.format(len(attempts)))
 
     return attempts
 
